@@ -2,7 +2,7 @@
 Dépôt regroupant l'ensemble des TPs du module de Structure de Donnée de 3IF.
 
 ## To-do
- - [ ] liste simplement chainée
+ - [X] liste simplement chainée
  - [ ] liste doublement chainée
  - [ ] arbre
  - [ ] Pile : implémentation par tableau ou liste chainée
