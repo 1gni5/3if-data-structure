@@ -3,9 +3,9 @@ Dépôt regroupant l'ensemble des TPs du module de Structure de Donnée de 3IF.
 
 ## To-do
  - [X] liste simplement chainée
- - [ ] liste doublement chainée
+ - [X] liste doublement chainée
  - [ ] arbre
- - [ ] Pile : implémentation par tableau ou liste chainée
+ - [ ] pile : implémentation par tableau ou liste chainée
  - [ ] file : tableau ou liste chainée
  - [ ] file double (deque) : implementation avec liste chainée double (avec/sans  sentinelles?)
  - [ ] liste : implementation avec liste chainée
