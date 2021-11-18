@@ -3,70 +3,75 @@
 #include "linked-list.h"
 
 /*
-* Ajoute une nouvelle cellule de valeur=value en tête de liste.
-*/
-cell_t* push(cell_t ** head, int value) {
+ * Insère une valeur en tête de liste.
+ */
+node_t* push(node_t ** head, int value) {
 
-  /* Create the new cell */
-  cell_t* new_cell = (cell_t*)malloc(sizeof(cell_t));
-  new_cell->value = value;
-  new_cell->next = *head;
+  /* Créer un nouveau noeud */
+  node_t* new_node = (node_t*)malloc(sizeof(node_t));
+  new_node->value = value;
+  new_node->next = *head;
 
-  /* Set new head */
-  *head = new_cell;
+  /* Met-à-jour la tête de liste */
+  *head = new_node;
+
   return *head;
 }
 
 /*
- * Supprime la première cellule, retourne sa valeur.
+ * Supprime la tête de liste et retourne sa valeur.
  * Retourne -1 si la liste est vide (head = NULL).
-*/
-int pop(cell_t** head) {
+ */
+int pop(node_t** head) {
 
   int ret_val = -1;
-  cell_t *next_cell = NULL;
+  node_t *next_node = NULL;
 
-  /* No need to free memory */
+  /* Liste vide */
   if (*head == NULL)
     return -1;
 
-  /* Switch to next cell */
-  next_cell = (*head)->next;
+  /* Change la tête de liste */
   ret_val = (*head)->value;
+  next_node = (*head)->next;
   free(*head);
-  *head = next_cell;
+  *head = next_node;
 
   return ret_val;
 }
 
 /*
- * Supprime la première cellule pour qui valeur=value, retourne 0 si
- * trouve une cellule correspondante sinon retourne -1.
-*/
-int v_remove(cell_t** head, int value) {
+ * Insére une valeur à l'indice données.
+ * Si l'indice n'existe pas la valeur n'est pas insérée.
+ */
+node_t* insert(node_t** head, int index, int value) {
 
-  cell_t* current = *head;
-  cell_t* previous = NULL;
+  int position = 0;
+  node_t *current = *head;
+  node_t *previous = NULL;
+
+  /* Créer le nouveau noeud */
+  node_t *new_node = (node_t*)malloc(sizeof(node_t));
+  new_node->value = value;
 
   /* Parcours la liste */
   while (current != NULL) {
 
-    /* Valeur trouvée */
-    if (current->value == value) {
+    if (position == index) {
 
-      /* If no previous cell exist */
+      new_node->next = current;
+
+      /* Gère la tête de liste */
       if (previous == NULL)
-        *head = current->next;
+        *head = new_node;
       else
-        previous->next = current->next;
-
-      free(current);
-      return 0;
+        previous->next = new_node;
     }
 
     previous = current;
     current = current->next;
+    position++;
   }
 
-  return -1;
+  return *head;
 }

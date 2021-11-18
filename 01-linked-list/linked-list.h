@@ -1,13 +1,13 @@
 #ifndef LINKED_LIST_H_
 #define LINKED_LIST_H_
 
-typedef struct cell {
+typedef struct node {
   int value;
-  struct cell* next;
-} cell_t;
+  struct node* next;
+} node_t;
 
-cell_t* push(cell_t** head, int value);
-int pop(cell_t** head);
-int v_remove(cell_t** head, int value);
+node_t* push(node_t** head, int value);
+int pop(node_t** head);
+node_t* insert(node_t** head, int index, int value);
 
 #endif // LINKED_LIST_H_
