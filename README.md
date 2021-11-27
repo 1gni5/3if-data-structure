@@ -5,10 +5,10 @@ Dépôt regroupant l'ensemble des TPs du module de Structure de Donnée de 3IF.
  - [X] liste simplement chainée
  - [X] liste doublement chainée
  - [ ] arbre
- - [ ] pile : implémentation par tableau ou liste chainée
- - [ ] file : tableau ou liste chainée
+ - [X] pile : implémentation par tableau ou liste chainée (Liste chainée)
+ - [X] file : tableau ou liste chainée (Liste chainée)
  - [ ] file double (deque) : implementation avec liste chainée double (avec/sans  sentinelles?)
- - [ ] liste : implementation avec liste chainée
+ - [X] liste : implementation avec liste chainée
  - [ ] vecteur 
  - [ ] file de priorité
  - [ ] dictionnaire : liste chainée/tableau trié
